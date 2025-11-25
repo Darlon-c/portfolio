@@ -15,19 +15,217 @@
 <body class="bg-cinza-escuro">
 
   <header class="px-4 py-4">
-    <nav class="flex items-center justify-around">
+    <nav class="flex flex-col items-center justify-around gap-4 sm:flex-row sm:gap-0">
       <h1 class="font-sans text-2xl font-semibold text-white cursor-pointer">Ellen Darfnny</h1>
 
-       <ul class="flex gap-10">
-          <li><a class="font-sans font-semibold text-white" href="/about.html">Sobre mim</a></li>
-          <li><a class="font-sans font-semibold text-white" href="">Publicações</a></li>
-          <li><a class="font-sans font-semibold text-white" href="">Contato</a></li>
-       </ul>
+     <ul class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+        <li><a class="font-sans font-semibold text-white" href="/about.html">Sobre mim</a></li>
+        <li><a class="font-sans font-semibold text-white" href="">Publicações</a></li>
+        <li><a class="font-sans font-semibold text-white" href="">Contato</a></li>
+      </ul>
 
     </nav>
-
-   
   </header>
 
+  <section class="font-sans text-lg my-52 sm:items-center">
+    <div class="flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-32">
+      <div class="flex justify-center w-full lg:w-1/3">
+        <img src="/src/image/ellen.png" width="300px" alt="Ellen Darfnny">
+      </div>
+
+      <div class="flex flex-col w-full gap-6 text-white lg:w-1/3 ">
+        <h1
+          class="text-4xl font-bold text-white transition-all duration-500 hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-900 hover:bg-clip-text hover:text-transparent">
+          Jornalista, Redatora e Roteirista.
+        </h1>
+
+        <p>
+          Atuo na produção de textos jornalísticos, artigos, roteiros e copywriting criativo, unindo estratégia e
+          narrativa para gerar conexão real com o leitor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="text-white">
+      <h1 class="flex justify-center text-3xl font-black">Trabalhos</h1>
+
+      <div class="flex justify-center my-10">
+        <ul class="flex flex-wrap justify-center gap-10 font-sans font-semibold md:gap-40 lg:gap-60">
+          <li><a class="p-5 rounded-xl hover:bg-blue-400 hover:text-black" href="#manual">MANUAL DA WEB</a></li>
+          <li><a class="p-5 rounded-xl hover:bg-blue-400 hover:text-black" href="#guiadin">GUIADIN</a></li>
+          <li><a class="p-5 rounded-xl hover:bg-blue-400 hover:text-black" href="">APP TUTS</a></li>
+          <li><a class="p-5 rounded-xl hover:bg-blue-400 hover:text-black" href="">GEEKPOPNEWS</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Posts manual da web -->
+  <section id="manual" class="flex justify-center my-20 md:my-40 lg:my-80">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/img1.jpg" alt="">
+        <h1 class="py-3 font-bold text-white">Aprenda como emitir certidão de nascimento digital em minutos</h1>
+        <p class="py-2 text-white">
+          Saber emitir certidão de nascimento digital pode facilitar muito a vida de quem precisa...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/img2.jpg" alt="">
+        <h1 class="py-3 font-bold text-white">Aprenda como fazer vídeo no novo formato do Instagram [2025]</h1>
+        <p class="py-2 text-white">
+          Saber fazer vídeo no novo formato do Instagram é fundamental para quem deseja...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/img3.jpg" alt="">
+        <h1 class="py-3 font-bold text-white">Os 20 melhores desenhos animados de todos os tempos</h1>
+        <p class="py-2 text-white">
+          Para quem é fã de animação ou apenas quer relembrar momentos da infância...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/img4.jpg" alt="">
+        <h1 class="py-3 font-bold text-white">Curso de merendeira escolar: aulas pelo celular e sem mensalidade</h1>
+        <p class="py-2 text-white">
+          Você sonha em trabalhar em escolas e busca oportunidades para começar sem gastar nada...</p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="flex w-72 h-80">
+        <div class="flex items-center">
+          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-100 hover:font-semibold"><a
+              class="flex justify-center" href="">Veja mais matérias de Ellen no Manual da web aqui <i
+                class="fa-solid fa-arrow-right"></i></a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Posts guiadin -->
+  <section id="guiadin" class="flex justify-center my-20 md:my-40 lg:my-80">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/guidin1.png" alt="">
+        <h1 class="py-3 font-bold text-white">Mais Social 2025: veja como se cadastrar no MS em 2025</h1>
+        <p class="py-2 text-white">
+          O Mais Social 2025 do MS oferece oportunidades importantes para quem busca benefícios sociais...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/guidin2.png" alt="">
+        <h1 class="py-3 font-bold text-white">CNH Social ES: quem tem direito e como fazer a inscrição</h1>
+        <p class="py-2 text-white">
+          Você já imaginou ter a chance de tirar sua habilitação sem precisar se preocupar com os custos...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/guidin3.jpg" alt="">
+        <h1 class="py-3 font-bold text-white">Nota Fiscal Carioca: o que é, como funciona e como se cadastrar</h1>
+        <p class="py-2 text-white">
+          Se você já ouviu falar da Nota Fiscal Carioca, mas ainda não entendeu direito do que se trata, saiba que não
+          está sozinho...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/guiadin4.png" alt="">
+        <h1 class="py-3 font-bold text-white">Aprenda como consultar Valores a Receber de herdeiros</h1>
+        <p class="py-2 text-white">
+          Para quem deseja consultar Valores a Receber de herdeiros, saiba que esse é um direito que pode trazer
+          recursos...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="flex w-72 h-80">
+        <div class="flex items-center">
+          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-100 hover:font-semibold"><a
+              class="flex justify-center" href="">Veja mais matérias de Ellen no Guiadin aqui <i
+                class="fa-solid fa-arrow-right"></i></a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Posts apptuts -->
+  <section id="guiadin" class="flex justify-center my-20 md:my-40 lg:my-80">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/apptuts1.jpg" alt="">
+        <h1 class="py-3 font-bold text-white">Aplicativo Paint My Wall: experimente cores para pintura de parede pelo celular</h1>
+        <p class="py-2 text-white">
+          Pensando em dar uma nova cara à sua casa e bateu aquela dúvida na hora de escolher a cor ideal...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/apptuts2.jpg" alt="">
+        <h1 class="py-3 font-bold text-white">Modelos divinos de papel de parede cristão para seu celular</h1>
+        <p class="py-2 text-white">
+          Você é do tipo que gosta de personalizar o celular com imagens que realmente...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/apptuts3.jpg" alt="">
+        <h1 class="py-3 font-bold text-white">3 apps de reprodução de áudio para escutar música no celular</h1>
+        <p class="py-2 text-white">
+          A verdade é que escutar música no celular já virou parte da nossa rotina...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="w-full h-auto max-w-72">
+        <img src="/src/image/apptuts4.jpg" alt="">
+        <h1 class="py-3 font-bold text-white">Aplicativo de figurinhas religiosas com lindas mensagens cristãs</h1>
+        <p class="py-2 text-white">
+          Você costuma enviar mensagens de carinho, fé e esperança para familiares, amigos ou grupos de oração...
+        </p>
+        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
+      </div>
+
+      <div class="flex w-72 h-80">
+        <div class="flex items-center">
+          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-100 hover:font-semibold"><a
+              class="flex justify-center" href="">Veja mais matérias de Ellen na Guiadin aqui <i
+                class="fa-solid fa-arrow-right"></i></a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 </body>
+
 </html>

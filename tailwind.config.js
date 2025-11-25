@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         'cinza-escuro': '#242020',
+        'cinza-estranho': '#bfb2b2'
       }
     },
   },
