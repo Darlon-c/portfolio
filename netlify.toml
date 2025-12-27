@@ -1,33 +1,3 @@
 [build]
   command = "npm run build"
-  publish = "."
-
-[build.environment]
-  NODE_VERSION = "18"
-
-# ⚠️ IMPORTANTE: Configuração para SPA/ múltiplas páginas
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Para arquivos que existem (CSS, JS, imagens)
-[[redirects]]
-  from = "/assets/*"
-  to = "/assets/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/css/*"
-  to = "/css/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/js/*"
-  to = "/js/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/images/*"
-  to = "/images/:splat"
-  status = 200
+  publish = "dist"

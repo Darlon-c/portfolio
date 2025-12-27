@@ -10,222 +10,423 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .card {
+      transform: scale(1);
+    }
+
+    .card.expanded {
+      transform: scale(1.15);
+    }
+  </style>
+  <style>
+    .card {
+      transform: scale(1);
+    }
+
+    .card.expanded {
+      transform: scale(1.15);
+    }
+  </style>
+
 </head>
 
 <body class="bg-cinza-escuro">
 
-  <header class="px-4 py-4">
-    <nav class="flex flex-col items-center justify-around gap-4 sm:flex-row sm:gap-0">
-      <h1 class="font-sans text-2xl font-semibold text-white cursor-pointer">Ellen Darfnny</h1>
+  <!-- Navbar -->
+  <header class="fixed inset-x-0 top-0 z-40 border-b border-gray-200 bg-white/75 backdrop-blur">
+    <div class="flex items-center justify-between px-6 py-3 mx-auto max-w-7xl">
+      <a href="#" class="flex items-center gap-3">
+        <div class="hidden md:block">
+          <div class="text-sm font-semibold">Ellen Darfnny</div>
+          <div class="text-xs text-gray-500 -mt-0.5">Jornalista • Redatora • Roteirista</div>
+        </div>
+      </a>
 
-     <ul class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-        <li><a class="font-sans font-semibold text-white" href="/about.html">Sobre mim</a></li>
-        <li><a class="font-sans font-semibold text-white" href="">Publicações</a></li>
-        <li><a class="font-sans font-semibold text-white" href="">Contato</a></li>
-      </ul>
+      <nav class="items-center hidden gap-6 text-sm md:flex">
+        <a href="#sobre" class="hover:underline">Sobre</a>
+        <a href="#portfolio" class="hover:underline">Portfólio</a>
+        <a href="#publicacoes" class="hover:underline">Publicações</a>
+        <a href="#contacto" class="hover:underline">Contacto</a>
+      </nav>
 
-    </nav>
-  </header>
-
-  <section class="font-sans text-lg my-52 sm:items-center">
-    <div class="flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-32">
-      <div class="flex justify-center w-full lg:w-1/3">
-        <img src="/src/image/ellen.png" width="300px" alt="Ellen Darfnny">
-      </div>
-
-      <div class="flex flex-col w-full gap-6 text-white lg:w-1/3 ">
-        <h1
-          class="text-4xl font-bold text-white transition-all duration-500 hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-900 hover:bg-clip-text hover:text-transparent">
-          Jornalista, Redatora e Roteirista.
-        </h1>
-
-        <p>
-          Atuo na produção de textos jornalísticos, artigos, roteiros e copywriting criativo, unindo estratégia e
-          narrativa para gerar conexão real com o leitor.
-        </p>
+      <!-- botão mobile -->
+      <div class="md:hidden">
+        <button id="menuBtn" aria-label="Abrir menu" class="p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
       </div>
     </div>
-  </section>
 
-  <section>
-    <div class="text-white">
-      <h1 class="flex justify-center text-3xl font-black">Trabalhos</h1>
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="hidden border-t border-gray-100 md:hidden">
+      <div class="flex flex-col gap-3 px-6 py-4">
+        <a href="#sobre" class="py-2">Sobre</a>
+        <a href="#portfolio" class="py-2">Portfólio</a>
+        <a href="#publicacoes" class="py-2">Publicações</a>
+        <a href="#contacto" class="py-2">Contacto</a>
+      </div>
+    </div>
+  </header>
 
-      <div class="flex justify-center my-10">
-        <ul class="flex flex-wrap justify-center gap-10 font-sans font-semibold md:gap-40 lg:gap-60">
-          <li><a class="p-5 rounded-xl hover:bg-blue-400 hover:text-black" href="#manual">MANUAL DA WEB</a></li>
-          <li><a class="p-5 rounded-xl hover:bg-blue-400 hover:text-black" href="#guiadin">GUIADIN</a></li>
-          <li><a class="p-5 rounded-xl hover:bg-blue-400 hover:text-black" href="">APP TUTS</a></li>
-          <li><a class="p-5 rounded-xl hover:bg-blue-400 hover:text-black" href="">GEEKPOPNEWS</a></li>
+  <!-- Ellen -->
+  <section class="text-white hero-bg">
+    <div class="flex flex-col items-center gap-12 px-6 py-16 mx-auto max-w-7xl md:py-28 md:flex-row">
+      <div class="flex-shrink-0">
+        <img src="/src/image/ellen.png" alt="Foto Ellen" class="w-48" />
+      </div>
+
+      <div class="max-w-3xl">
+        <h1 class="text-3xl font-extrabold leading-tight md:text-5xl">Jornalista • Redatora • Roteirista</h1>
+        <p class="max-w-2xl mt-4 text-gray-200">
+          Produzo reportagens especiais, artigos digitais e roteiros com foco em narrativa humana e impacto real.
+          Transformo pesquisa em histórias envolventes que geram conexão e resultados.
+        </p>
+
+        <div class="flex gap-4 mt-6">
+          <br>
+        </div>
+
+        <!-- skills rápidas -->
+        <ul class="flex flex-wrap gap-2 mt-6 text-sm text-gray-300">
+          <li class="px-3 py-1 rounded bg-white/6">Narrativa</li>
+          <li class="px-3 py-1 rounded bg-white/6">Entrevistas</li>
+          <li class="px-3 py-1 rounded bg-white/6">Roteiros</li>
+          <li class="px-3 py-1 rounded bg-white/6">SEO</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- O que eu faço -->
+  <section class="py-12 text-white">
+    <div class="px-6 mx-auto max-w-7xl">
+      <h2 class="mb-6 text-xl font-semibold">O que faço</h2>
 
-  <!-- Posts manual da web -->
-  <section id="manual" class="flex justify-center my-20 md:my-40 lg:my-80">
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/img1.jpg" alt="">
-        <h1 class="py-3 font-bold text-white">Aprenda como emitir certidão de nascimento digital em minutos</h1>
-        <p class="py-2 text-white">
-          Saber emitir certidão de nascimento digital pode facilitar muito a vida de quem precisa...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
+        <div class="p-6 border rounded-lg">
+          <h3 class="font-semibold">Jornalismo</h3>
+          <p class="mt-2 text-sm text-gray-200">Reportagens, apurações e entrevistas com foco em veracidade e empatia.
+          </p>
+        </div>
 
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/img2.jpg" alt="">
-        <h1 class="py-3 font-bold text-white">Aprenda como fazer vídeo no novo formato do Instagram [2025]</h1>
-        <p class="py-2 text-white">
-          Saber fazer vídeo no novo formato do Instagram é fundamental para quem deseja...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
+        <div class="p-6 border rounded-lg">
+          <h3 class="font-semibold">Redação</h3>
+          <p class="mt-2 text-sm text-gray-200">Artigos, conteúdo web e copywriting estratégico para públicos reais.</p>
+        </div>
 
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/img3.jpg" alt="">
-        <h1 class="py-3 font-bold text-white">Os 20 melhores desenhos animados de todos os tempos</h1>
-        <p class="py-2 text-white">
-          Para quem é fã de animação ou apenas quer relembrar momentos da infância...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
+        <div class="p-6 border rounded-lg">
+          <h3 class="font-semibold">Roteiros</h3>
+          <p class="mt-2 text-sm text-gray-200">Roteiros para vídeos, redes sociais e conteúdos institucionais.</p>
+        </div>
 
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/img4.jpg" alt="">
-        <h1 class="py-3 font-bold text-white">Curso de merendeira escolar: aulas pelo celular e sem mensalidade</h1>
-        <p class="py-2 text-white">
-          Você sonha em trabalhar em escolas e busca oportunidades para começar sem gastar nada...</p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
-
-      <div class="flex w-72 h-80">
-        <div class="flex items-center">
-          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-100 hover:font-semibold"><a
-              class="flex justify-center" href="">Veja mais matérias de Ellen no Manual da web aqui <i
-                class="fa-solid fa-arrow-right"></i></a></button>
+        <div class="p-6 border rounded-lg">
+          <h3 class="font-semibold">Estratégia</h3>
+          <p class="mt-2 text-sm text-gray-200">SEO e storytelling.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Posts guiadin -->
-  <section id="guiadin" class="flex justify-center my-20 md:my-40 lg:my-80">
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+  <!-- Multi post -->
+  <section id="work" class="py-4 md:py-12 lg:py-20 ">
+    <div class="px-6 mx-auto max-w-7xl">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+        <div
+          class="w-full h-auto overflow-hidden transition-all duration-300 ease-in-out cursor-pointer card max-w-72 hover:z-10">
+          <img class="object-cover w-full h-48" src="/src/image/uern1.png" alt="">
+          <h1 class="py-3 font-bold text-white">Aluna do Campus Mossoró é selecionada para intercâmbio na Armênia</h1>
+          <p class="py-2 text-white">
+            Estela Santos, estudante do Curso Técnico Integrado em Mecânica do IFRN Campus Mossoró....
+          </p>
+          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+              href="https://portal.ifrn.edu.br/campus/mossoro/noticias/aluna-do-campus-mossoro-e-selecionada-para-intercambio-na-armenia/">Leia
+              mais <i class="fa-solid fa-arrow-right"></i></a></button>
+        </div>
 
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/guidin1.png" alt="">
-        <h1 class="py-3 font-bold text-white">Mais Social 2025: veja como se cadastrar no MS em 2025</h1>
-        <p class="py-2 text-white">
-          O Mais Social 2025 do MS oferece oportunidades importantes para quem busca benefícios sociais...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
-
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/guidin2.png" alt="">
-        <h1 class="py-3 font-bold text-white">CNH Social ES: quem tem direito e como fazer a inscrição</h1>
-        <p class="py-2 text-white">
-          Você já imaginou ter a chance de tirar sua habilitação sem precisar se preocupar com os custos...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
-
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/guidin3.jpg" alt="">
-        <h1 class="py-3 font-bold text-white">Nota Fiscal Carioca: o que é, como funciona e como se cadastrar</h1>
-        <p class="py-2 text-white">
-          Se você já ouviu falar da Nota Fiscal Carioca, mas ainda não entendeu direito do que se trata, saiba que não
-          está sozinho...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
-
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/guiadin4.png" alt="">
-        <h1 class="py-3 font-bold text-white">Aprenda como consultar Valores a Receber de herdeiros</h1>
-        <p class="py-2 text-white">
-          Para quem deseja consultar Valores a Receber de herdeiros, saiba que esse é um direito que pode trazer
-          recursos...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
-
-      <div class="flex w-72 h-80">
-        <div class="flex items-center">
-          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-100 hover:font-semibold"><a
-              class="flex justify-center" href="">Veja mais matérias de Ellen no Guiadin aqui <i
+        <div
+          class="w-full h-auto overflow-hidden transition-all duration-300 ease-in-out cursor-pointer card max-w-72 hover:z-10">
+          <img class="object-cover w-full h-48" src="/src/image/anime.png" alt="">
+          <h1 class="py-3 font-bold text-white">A Cultura Geek em Mossoró</h1>
+          <p class="py-2 text-white">
+            Conheça a cultura que une o gosto por tecnologia e cultura pop e que vem participando da identidade dos
+            mossoroense....
+          </p>
+          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+              href="https://orgulhogeekmss.wixsite.com/universogeek">Leia mais <i
                 class="fa-solid fa-arrow-right"></i></a></button>
+        </div>
+
+        <div
+          class="w-full h-auto overflow-hidden transition-all duration-300 ease-in-out cursor-pointer card max-w-72 hover:z-10">
+          <img class="object-cover w-full h-48" src="/src/image/antonio.jpeg" alt="">
+          <h1 class="py-3 font-bold text-white">Um Poeta do Mundo</h1>
+          <p class="py-2 text-white">
+            É essa a primeira frase que o poeta Antônio Francisco diz para essa reportagem...
+          </p>
+          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
+              href="https://jornalismowebdigital.wixsite.com/vozesdosemiarido">Leia mais <i
+                class="fa-solid fa-arrow-right"></i></a></button>
+        </div>
+
+        <div
+          class="w-full h-auto overflow-hidden transition-all duration-300 ease-in-out cursor-pointer card max-w-72 hover:z-10">
+          <img class="object-cover w-full h-48" src="/src/image/lispector.webp" alt="">
+          <h1 class="py-3 font-bold text-white">Aniversário de Clarice Lispector: celebrando vida e obras</h1>
+          <p class="py-2 text-white">
+            A escritora nasceu em 10 de dezembro de 1920, em Tchetchelnik, na Ucrânia...
+          </p>
+          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold">
+            <a href="https://geekpopnews.com.br/aniversario-de-clarice-lispector-celebrando-vida-e-obras/">Leia mais <i
+                class="fa-solid fa-arrow-right"></i></a>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- posts -->
+  <section id="publicacoes" class="py-12 bg-white">
+    <div class="px-6 mx-auto max-w-7xl">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-semibold">Coleção de publicações</h2>
+      </div>
+      <div class="mt-6">
+        <div class="flex gap-2 overflow-x-auto"> <button class="px-4 py-2 text-sm bg-gray-100 rounded-md tab-btn"
+            data-tab="manual">Manual da Web</button> <button class="px-4 py-2 text-sm rounded-md tab-btn bg-white/0"
+            data-tab="guiadin">Guiadin</button> <button class="px-4 py-2 text-sm rounded-md tab-btn bg-white/0"
+            data-tab="apptuts">AppTuts</button> <button class="px-4 py-2 text-sm rounded-md tab-btn bg-white/0"
+            data-tab="geek">Geek Pop News</button> <button class="px-4 py-2 text-sm rounded-md tab-btn bg-white/0"
+            data-tab="ifrn">IFRN</button> </div>
+        <div class="mt-6">
+          <!-- Manual -->
+          <div class="grid grid-cols-1 gap-6 tab-content sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+            data-content="manual">
+            <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/img1.jpg" alt="Manual 1"
+                class="object-cover w-full rounded h-36" />
+              <h4 class="mt-3 text-sm font-semibold">Aprenda como emitir certidão de nascimento digital em minutos...
+              </h4>
+              <a href="https://manualdaweb.com/tutoriais/emitir-certidao-de-nascimento-digital/" target="_blank"
+                class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+            </article>
+            <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/img2.jpg" alt="Manual 2"
+                class="object-cover w-full rounded h-36" />
+              <h4 class="mt-3 text-sm font-semibold">Aprenda como fazer vídeo no novo formato do Instagram [2025]</h4>
+              <a href="https://manualdaweb.com/aplicativos/fazer-video-no-novo-formato-do-instagram/" target="_blank"
+                class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+            </article>
+            <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/img4.jpg" alt="Manual 2"
+                class="object-cover w-full rounded h-36" />
+              <h4 class="mt-3 text-sm font-semibold">Curso de merendeira escolar: aulas pelo celular e sem mensalidade
+              </h4>
+              <a href="https://manualdaweb.com/cursos/curso-de-merendeira/" target="_blank"
+                class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+            </article>
+            <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/img3.jpg" alt="Manual 2"
+                class="object-cover w-full rounded h-36" />
+              <h4 class="mt-3 text-sm font-semibold">Os 20 melhores desenhos animados de todos os tempos</h4>
+              <a href="https://manualdaweb.com/filmes-e-series/melhores-desenhos-animados/" target="_blank"
+                class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+            </article>
+          </div>
+          <!-- Guiadin -->
+          <div class="hidden tab-content" data-content="guiadin">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/guidin1.png" alt="Guiadin 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Mais Social 2025: veja como se cadastrar no MS em 2025</h4>
+                <a href="https://guiadin.com/programas-sociais/mais-social-2025/" target="_blank"
+                  class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/guidin3.jpg" alt="Guiadin 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Nota Fiscal Carioca: o que é, como funciona e como se cadastrar
+                </h4>
+                <a href="https://guiadin.com/dicas/nota-fiscal-carioca/" target="_blank"
+                  class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/guidin2.png" alt="Guiadin 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">CNH Social ES: quem tem direito e como fazer a inscrição</h4>
+                <a href="https://guiadin.com/programas-sociais/cnh-social-es-quem-tem-direito-e-como-fazer-a-inscricao/"
+                  target="_blank" class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/guiadin4.png" alt="Guiadin 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Aprenda como consultar Valores a Receber de herdeiros</h4>
+                <a href="https://guiadin.com/dicas/consultar-valores-a-receber-de-herdeiros/" target="_blank"
+                  class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+            </div>
+          </div>
+          <!-- Apptuts -->
+          <div class="hidden tab-content" data-content="apptuts">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/apptuts1.jpg" alt="App 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Aplicativo Paint My Wall: experimente cores para pintura de
+                  parede pelo celular</h4>
+                <a href="https://www.apptuts.net/android/testar-cores-para-pintura-de-parede/" target="_blank"
+                  class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/apptuts2.jpg" alt="App 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Modelos divinos de papel de parede cristão para seu celular</h4>
+                <a href="https://www.apptuts.net/android/papel-de-parede-cristao/" target="_blank"
+                  class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/apptuts3.jpg" alt="App 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">3 apps de reprodução de áudio para escutar música no celular</h4>
+                <a href="https://www.apptuts.net/android/escutar-musica-no-celular/" target="_blank"
+                  class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/apptuts4.jpg" alt="App 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Aplicativo de figurinhas religiosas com lindas mensagens cristãs
+                </h4>
+                <a href="https://www.apptuts.net/android/aplicativo-de-figurinhas-religiosas/" target="_blank"
+                  class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+            </div>
+          </div>
+          <!-- Geekpop -->
+          <div class="hidden tab-content" data-content="geek">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/geek1.webp" alt="Geek 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Resenha – “Doze horas de terror” de Marcos Rey</h4>
+                <a href="https://geekpopnews.com.br/resenha-doze-horas-de-terror-de-marcos-rey/" target="_blank"
+                  class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/geek2.webp" alt="Geek 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Dor e (re) construção de Mila Nascimento: sobrevivente ganha voz
+                </h4>
+                <a href="https://geekpopnews.com.br/dor-e-re-construcao-de-mila-nascimento-sobrevivente-ganha-voz/"
+                  target="_blank" class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/geek3.webp" alt="Geek 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Ana Barros reflete sobre luto familiar em livro de estreia</h4>
+                <a href="https://geekpopnews.com.br/ana-barros-reflete-sobre-luto-familiar-em-livro-de-estreia/"
+                  target="_blank" class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/geek4.webp" alt="Geek 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Faro Editorial lança livro sobre fantasia e cultura japonesa</h4>
+                <a href="https://geekpopnews.com.br/faro-editorial-lanca-livro-sobre-fantasia-e-cultura-japonesa/"
+                  target="_blank" class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+            </div>
+          </div>
+          <!-- IFRN -->
+          <div class="hidden tab-content" data-content="ifrn">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/ifrn2.png" alt="IFRN 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Aluna do IFRN Campus Mossoró é premiada na FEBRACE 2024</h4>
+                <a href="https://portal.ifrn.edu.br/campus/mossoro/noticias/aluna-do-ifrn-campus-mossoro-e-premiada-na-febrace-2024/"
+                  target="_blank" class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/ifrn3.png" alt="IFRN 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">O IFRN Campus Mossoró e a Associação Cultural e Desportiva
+                  Potiguar </h4>
+                <a href="https://portal.ifrn.edu.br/campus/mossoro/noticias/o-ifrn-campus-mossoro-e-a-associacao-cultural-e-desportiva-potiguar-ajustam-detalhes-para-parceria/"
+                  target="_blank" class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/ifrn4.png" alt="IFRN 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">Alunos do IFRN Campus Mossoró ganham medalha de ouro</h4>
+                <a href="https://portal.ifrn.edu.br/campus/mossoro/noticias/alunos-do-ifrn-campus-mossoro-ganham-medalha-de-ouro-na-olimpiada-cearense-de-foguetes/"
+                  target="_blank" class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+
+              <article class="p-4 bg-white border rounded-lg"> <img src="/src/image/ifrn5.png" alt="IFRN 1"
+                  class="object-cover w-full rounded h-36" />
+                <h4 class="mt-3 text-sm font-semibold">ITMO realiza cerimônia de adesão de nova empresa incubada</h4>
+                <a href="https://portal.ifrn.edu.br/campus/mossoro/noticias/itmo-realiza-cerimonia-de-adesao-de-nova-empresa-incubada/"
+                  target="_blank" class="inline-block mt-3 text-sm text-blue-600">Leia mais →</a>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-<!-- Posts apptuts -->
-  <section id="guiadin" class="flex justify-center my-20 md:my-40 lg:my-80">
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+  <!-- Quem sou eu -->
+  <section id="sobre" class="py-12 bg-cinza-escuro">
+    <div class="grid items-start max-w-5xl grid-cols-1 gap-8 px-6 mx-auto md:grid-cols-3">
+      <div class="flex flex-col items-center md:col-span-1 md:items-start"> <img src="/src/image/ellen.png" alt="Ellen"
+          class="mb-4 avatar" />
 
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/apptuts1.jpg" alt="">
-        <h1 class="py-3 font-bold text-white">Aplicativo Paint My Wall: experimente cores para pintura de parede pelo celular</h1>
-        <p class="py-2 text-white">
-          Pensando em dar uma nova cara à sua casa e bateu aquela dúvida na hora de escolher a cor ideal...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
       </div>
 
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/apptuts2.jpg" alt="">
-        <h1 class="py-3 font-bold text-white">Modelos divinos de papel de parede cristão para seu celular</h1>
-        <p class="py-2 text-white">
-          Você é do tipo que gosta de personalizar o celular com imagens que realmente...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
-
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/apptuts3.jpg" alt="">
-        <h1 class="py-3 font-bold text-white">3 apps de reprodução de áudio para escutar música no celular</h1>
-        <p class="py-2 text-white">
-          A verdade é que escutar música no celular já virou parte da nossa rotina...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
-
-      <div class="w-full h-auto max-w-72">
-        <img src="/src/image/apptuts4.jpg" alt="">
-        <h1 class="py-3 font-bold text-white">Aplicativo de figurinhas religiosas com lindas mensagens cristãs</h1>
-        <p class="py-2 text-white">
-          Você costuma enviar mensagens de carinho, fé e esperança para familiares, amigos ou grupos de oração...
-        </p>
-        <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-300 hover:font-semibold"><a
-            href="">Leia mais <i class="fa-solid fa-arrow-right"></i></a></button>
-      </div>
-
-      <div class="flex w-72 h-80">
-        <div class="flex items-center">
-          <button class="px-3 py-3 text-gray-200 rounded-lg hover:text-black hover:bg-blue-100 hover:font-semibold"><a
-              class="flex justify-center" href="">Veja mais matérias de Ellen na Guiadin aqui <i
-                class="fa-solid fa-arrow-right"></i></a></button>
+      <div class="md:col-span-2">
+        <h3 class="text-xl font-semibold text-white">Quem sou eu</h3>
+        <p class="mt-3 text-gray-200"> Sou formada em Jornalismo pela Universidade do Estado do Rio Grande do Norte
+          (UERN)
+          e construí minha trajetória entre a produção de conteúdo SEO e o roteiro audiovisual. Atuo como redatora e
+          roteirista, com experiência em diferentes formatos. </p>
+        <p class="mt-8 text-gray-200"> Minha escrita transita por temas diversos, com destaque para tutoriais,
+          conteúdos sobre benefícios sociais e financeiros, além de assuntos voltados à cultura, educação e turismo.
+          Busco
+          sempre transformar informações complexas em narrativas acessíveis, com linguagem clara e foco na conexão com o
+          leitor. </p>
+        <h4 class="mt-6 font-semibold text-white">Ferramentas & skills</h4>
+        <div class="flex flex-wrap gap-2 mt-3"> <span class="px-3 py-1 text-sm bg-white border rounded">Canva</span>
+          <span class="px-3 py-1 text-sm bg-white border rounded">Premiere</span> <span
+            class="px-3 py-1 text-sm bg-white border rounded">WordPress</span> <span
+            class="px-3 py-1 text-sm bg-white border rounded">SEO</span> <span
+            class="px-3 py-1 text-sm bg-white border rounded">Entrevistas</span>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Contato -->
+  <section id="contacto" class="py-12 text-white bg-cinza-escuro">
+    <div class="max-w-4xl px-6 mx-auto">
+      <h2 class="text-2xl font-semibold">Contacto</h2>
+      <p class="mt-2 text-gray-300">Vamos conversar sobre um projeto? Envia uma mensagem ou importa um briefing.</p>
+      <form action="#" class="grid grid-cols-1 gap-4 mt-6 md:grid-cols-2">
+        <input type="text" placeholder="Nome" class="p-3 border rounded bg-white/10 border-white/10" />
+        <input type="email" placeholder="Email" class="p-3 border rounded bg-white/10 border-white/10" />
+        <input type="text" placeholder="Assunto" class="p-3 border rounded bg-white/10 border-white/10 md:col-span-2" />
+        <textarea placeholder="Mensagem" class="p-3 border rounded bg-white/10 border-white/10 md:col-span-2"
+          rows="5"></textarea>
+        <button class="px-5 py-3 text-white rounded md:col-span-2 bg-accent hover:bg-gray-400">Enviar mensagem</button>
+      </form>
+      <div class="mt-6 text-sm text-gray-400">
+        Email:
+        <a href="mailto:ellen@email.com" class="underline">ellendarfnny@gmail.com 
+        </a>
+      </div>
+    </div>
+  </section>
+  </main>
 
 </body>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-gray-200">
+  <div class="flex flex-col items-center justify-between gap-4 px-6 py-8 mx-auto max-w-7xl md:flex-row">
+    <div class="text-sm text-gray-600">© 2025 Ellen Darfnny — Jornalista e Redatora</div>
+    <div class="flex items-center gap-4 text-sm"> 
+      <a href="https://www.linkedin.com/in/ellen-lima-1058241ba/" target="_blank" class="text-gray-600 hover:underline">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/src/js/main.js"></script>
 
 </html>

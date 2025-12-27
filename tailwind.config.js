@@ -12,7 +12,8 @@ module.exports = {
       },
       colors: {
         'cinza-escuro': '#242020',
-        'cinza-estranho': '#bfb2b2'
+        'cinza-estranho': '#bfb2b2',
+        'azul-carvao': '#3A7CA5'
       }
     },
   },
