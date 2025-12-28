@@ -37,20 +37,29 @@
   <!-- Navbar -->
   <header class="fixed inset-x-0 top-0 z-40 border-b border-gray-200 bg-white/75 backdrop-blur">
     <div class="flex items-center justify-between px-6 py-3 mx-auto max-w-7xl">
+
       <a href="#" class="flex items-center gap-3">
+
+        <div class="text-sm font-semibold md:hidden">
+          Ellen Darfnny
+        </div>
+
         <div class="hidden md:block">
           <div class="text-sm font-semibold">Ellen Darfnny</div>
-          <div class="text-xs text-gray-500 -mt-0.5">Jornalista • Redatora • Roteirista</div>
+          <div class="text-xs text-gray-500 -mt-0.5">
+            Jornalista • Redatora • Roteirista
+          </div>
         </div>
       </a>
 
+      <!-- desktop menu -->
       <nav class="items-center hidden gap-6 text-sm md:flex">
         <a href="#sobre" class="hover:underline">Sobre</a>
         <a href="#publicacoes" class="hover:underline">Publicações</a>
         <a href="#contacto" class="hover:underline">Contacto</a>
       </nav>
 
-      <!-- botão mobile -->
+      <!-- button mobile -->
       <div class="md:hidden">
         <button id="menuBtn" aria-label="Abrir menu" class="p-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,7 +69,7 @@
       </div>
     </div>
 
-    <!-- mobile menu -->
+    <!-- dropdown -->
     <div id="mobileMenu" class="hidden border-t border-gray-100 md:hidden">
       <div class="flex flex-col gap-3 px-6 py-4">
         <a href="#sobre" class="py-2">Sobre</a>
@@ -69,6 +78,7 @@
       </div>
     </div>
   </header>
+
 
   <!-- Ellen -->
   <section class="text-white hero-bg">
@@ -377,7 +387,7 @@
       <div class="md:col-span-2">
         <h3 class="text-xl font-semibold text-white">Quem sou eu</h3>
         <p class="mt-3 text-gray-200">
-          Sou formada em Jornalismo pela Universidade do Estado do Rio Grande do Norte (UERN) e mestrando em Estudos da
+          Sou formada em Jornalismo pela Universidade do Estado do Rio Grande do Norte (UERN) e mestranda em Estudos da
           Mídia pela Universidade Federal do Rio Grande do Norte (UFRN).
         </p>
         <p class="mt-3 text-gray-200">
@@ -403,10 +413,10 @@
   <!-- Contato -->
   <section id="contacto" class="py-12 text-white bg-cinza-escuro">
     <div class="max-w-4xl px-6 mx-auto">
-      <h2 class="text-2xl font-semibold">Contacto</h2>
+      <h2 class="text-2xl font-semibold">Contato</h2>
       <p class="mt-2 text-gray-300">Vamos conversar sobre um projeto? Envia uma mensagem ou importa um briefing.</p>
       <form name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 gap-4 mt-6 md:grid-cols-2">
-       
+
         <input type="hidden" name="form-name" value="contact">
 
         <input type="text" name="name" placeholder="Nome" class="p-3 border rounded bg-white/10 border-white/10"
